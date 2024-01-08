@@ -4,7 +4,8 @@ body {
     margin: 0;
     color: white;
     font-family: "Roboto Slab", serif;
-    height: 1200px;
+    height: fit-content;
+    overflow-x: hidden;
 }
 
 header {
@@ -48,8 +49,7 @@ header .headerContainer .profile {
 .profile h1, .profile p {
     margin: 0;
     padding: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: wrap;
     overflow: hidden;
 }
 
@@ -97,8 +97,33 @@ header .headerContainer .profile {
     outline-offset: 1px;
 }
 
+.content {
+    color: black;
+    margin: 50px 100px;
+}
 
-@media (max-width:1000px) {
+.bar {
+    position: relative;
+    height: 20px;
+    border-radius: 20px;
+    width: 100%;
+    background-color: #ebe9e9;
+}
+
+.progress {
+    position: absolute;
+    height: inherit;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #CC860D 10%, #F8E559 95%);
+}
+
+.expList span {
+    color: #CC860D;
+}
+
+@media (max-width:600px) {
     .headerContainer {
         align-items: baseline;
     }
@@ -114,5 +139,9 @@ header .headerContainer .profile {
 
     .buttons input[type='button'] {
         padding: 4px 10px;
+    }
+
+    .content {
+        margin: 25px;
     }
 }
